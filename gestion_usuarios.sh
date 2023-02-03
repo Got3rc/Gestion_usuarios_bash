@@ -19,9 +19,9 @@ read -p "Introduce la cantidad de usuarios a crear: " num_casos
 	echo Escribe el nombre de usuario $i.
 	read nombre
 
-	useradd $nombre 
+	sudo useradd $nombre 
 	
-	echo Usuario $nombre creado
+	echo "comando sudo useradd" $nombre "completado"
 
 	done
 
@@ -39,9 +39,9 @@ read -p "Introduce la cantidad de usuarios a borrar: " num_casos
 	echo Escribe el nombre de usuario $i.
 	read nombre
 
-	deluser $nombre 
+	sudo deluser $nombre 
 	
-	echo Usuario $nombre borrado
+	echo "comando sudo deluser" $nombre "completado"
 
 	done
 	
@@ -57,9 +57,9 @@ read -p "Introduce la cantidad de grupos que quieres hacer: " num_casos
 	echo Escribe el nombre del grupo $i.
 	read nombre
 
-	addgroup $nombre 
+	sudo addgroup $nombre 
 	
-	echo Grupo $nombre creado
+	echo "comando sudo addgroup" $nombre "completado"
 
 	done	
 	
@@ -76,9 +76,9 @@ read -p "Introduce la cantidad de grupos que quieres borrar: " num_casos
 	echo Escribe el nombre del grupo a borrar $i.
 	read nombre
 
-	delgroup $nombre 
+	sudo delgroup $nombre 
 	
-	echo Grupo $nombre borrado
+	echo "comando sudo delgroup" $nombre "completado"
 
 	done	
 		
@@ -96,8 +96,9 @@ then
 	
 	read usuario
 	
-	usermod -G $grupos $usuarios
+	sudo usermod -G $grupos $usuarios
 
+	echo "Comando sudo usermod -G" $grupos $usuarios "completado"
 	
 	
 
